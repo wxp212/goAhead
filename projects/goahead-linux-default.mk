@@ -54,7 +54,7 @@ CFLAGS                += $(CFLAGS-$(DEBUG))
 DFLAGS                += $(DFLAGS-$(DEBUG))
 LDFLAGS               += $(LDFLAGS-$(DEBUG))
 
-ME_ROOT_PREFIX        ?= 
+ME_ROOT_PREFIX        ?= /home/wxp/goAhead
 ME_BASE_PREFIX        ?= $(ME_ROOT_PREFIX)/usr/local
 ME_DATA_PREFIX        ?= $(ME_ROOT_PREFIX)/
 ME_STATE_PREFIX       ?= $(ME_ROOT_PREFIX)/var
