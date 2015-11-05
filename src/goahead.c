@@ -50,6 +50,12 @@ MAIN(goahead, int argc, char **argv, char **envp)
         return 0;
     }
 #endif
+    if(chdir(ME_ETC_PREFIX) < 0)
+    {
+        error("Can't change directory to %s", ME_ETC_PREFIX);
+        exit(-1);
+    }
+
     route = "route.txt";
     auth = "auth.txt";
 

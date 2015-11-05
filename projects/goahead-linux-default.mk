@@ -72,6 +72,11 @@ ME_SPOOL_PREFIX       ?= $(ME_ROOT_PREFIX)/var/spool/$(NAME)
 ME_CACHE_PREFIX       ?= $(ME_ROOT_PREFIX)/var/spool/$(NAME)/cache
 ME_SRC_PREFIX         ?= $(ME_ROOT_PREFIX)$(NAME)-$(VERSION)
 
+DFLAGS += -DME_ROOT_PREFIX=\"$(ME_ROOT_PREFIX)\" -DME_BASE_PREFIX=\"$(ME_BASE_PREFIX)\" -DME_DATA_PREFIX=\"$(ME_DATA_PREFIX)\" -DME_STATE_PREFIX=\"$(ME_STATE_PREFIX)\" \
+-DME_APP_PREFIX=\"$(ME_APP_PREFIX)\" -DME_VAPP_PREFIX=\"$(ME_VAPP_PREFIX)\" -DME_BIN_PREFIX=\"$(ME_BIN_PREFIX)\" -DME_INC_PREFIX=\"$(ME_INC_PREFIX)\" -DME_LIB_PREFIX=\"$(ME_LIB_PREFIX)\" \
+-DME_MAN_PREFIX=\"$(ME_MAN_PREFIX)\" -DME_SBIN_PREFIX=\"$(ME_SBIN_PREFIX)\" -DME_ETC_PREFIX=\"$(ME_ETC_PREFIX)\" -DME_WEB_PREFIX=\"$(ME_WEB_PREFIX)\" -DME_LOG_PREFIX=\"$(ME_LOG_PREFIX)\" \
+-DME_SPOOL_PREFIX=\"$(ME_SPOOL_PREFIX)\" -DME_CACHE_PREFIX=\"$(ME_CACHE_PREFIX)\" -DME_SRC_PREFIX=\"$(ME_SRC_PREFIX)\"
+
 
 TARGETS               += init
 TARGETS               += $(BUILD)/bin/goahead
@@ -702,6 +707,8 @@ installBinary: $(DEPS_43)
 	mkdir -p "$(ME_ETC_PREFIX)" ; \
 	cp src/auth.txt $(ME_ETC_PREFIX)/auth.txt ; \
 	cp src/route.txt $(ME_ETC_PREFIX)/route.txt ; \
+	cp src/self.key $(ME_ETC_PREFIX)/self.key ; \
+	cp src/self.crt $(ME_ETC_PREFIX)/self.crt ; \
 	mkdir -p "$(ME_VAPP_PREFIX)/bin" ; \
 	cp $(BUILD)/bin/libgo.so $(ME_VAPP_PREFIX)/bin/libgo.so ; \
 	mkdir -p "$(ME_VAPP_PREFIX)/doc/man/man1" ; \
