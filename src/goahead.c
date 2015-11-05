@@ -106,7 +106,8 @@ MAIN(goahead, int argc, char **argv, char **envp)
             usage();
         }
     }
-    documents = ME_GOAHEAD_DOCUMENTS;
+    //documents = ME_GOAHEAD_DOCUMENTS;
+    documents = ME_WEB_PREFIX;
     if (argc > argind) {
         documents = argv[argind++];
     }
