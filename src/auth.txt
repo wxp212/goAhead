@@ -15,3 +15,7 @@
 #   Define a user
 #       user name=joshua password=2fd6e47ff9bb70c0465fd2f5c8e5305e roles=manager,purchaser
 #
+# echo -n "string" | md5sum, "-n" can't be dropped!
+
+# passwd is "test"
+user name=test password=3441b753b98a6dc702183c989e35970f
