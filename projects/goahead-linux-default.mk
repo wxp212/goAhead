@@ -702,8 +702,7 @@ installBinary: $(DEPS_43)
 	mkdir -p "$(ME_VAPP_PREFIX)/bin" ; \
 	cp $(BUILD)/bin/roots.crt $(ME_VAPP_PREFIX)/bin/roots.crt ; \
 	mkdir -p "$(ME_WEB_PREFIX)" ; \
-	cp src/web/index.html $(ME_WEB_PREFIX)/index.html ; \
-	cp src/web/favicon.ico $(ME_WEB_PREFIX)/favicon.ico ; \
+	cp -rf src/web/* $(ME_WEB_PREFIX)/ ; \
 	mkdir -p "$(ME_ETC_PREFIX)" ; \
 	cp src/auth.txt $(ME_ETC_PREFIX)/auth.txt ; \
 	cp src/route.txt $(ME_ETC_PREFIX)/route.txt ; \
