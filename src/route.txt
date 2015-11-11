@@ -31,6 +31,8 @@
 #
 #   Standard routes
 #
+route uri=/action/login handler=action redirect=200@/index.html redirect=401@/login.html
+
 route uri=/cgi-bin dir=cgi-bin handler=cgi
 route uri=/action handler=action
 route uri=/ extensions=jst handler=jst
