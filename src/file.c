@@ -173,7 +173,7 @@ static void fileClose()
 
 PUBLIC void websFileOpen()
 {
-    websIndex = sclone("index.html");
+    websIndex = sclone("login.html");
     websDefineHandler("file", 0, fileHandler, fileClose, 0);
 }
 
