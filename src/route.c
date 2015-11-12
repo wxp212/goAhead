@@ -45,11 +45,21 @@ PUBLIC void websRouteRequest(Webs *wp)
     ssize       plen, len;
     bool        safeMethod;
     int         i;
+    char *loginStatus;
 
     assert(wp);
     assert(wp->path);
     assert(wp->method);
     assert(wp->protocol);
+
+    if(strstr(wp->path, "login") == NULL)
+    {
+        loginStatus = websGetSessionVar(wp, "loginStatus", "failed");
+        if(loginStatus == 0 || smatch(loginStatus, "failed"))
+        {
+            websRedirect(wp, "/login.html");
+        }
+    }
 
     safeMethod = smatch(wp->method, "POST") || smatch(wp->method, "GET") || smatch(wp->method, "HEAD");
     plen = slen(wp->path);
